@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Список Всех Выпускников</title>
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'student/style.css' %}">
+
+{% endblock %}
+
+{% block body %}
+    <br>
+    <h3 style="text-align:center;">Список всех Выпускников </h3>
+    <br>
+    <table class="T">
+            <tr>
+            <td>ФИО</td>
+            <td>Дата окончания</td>
+            <td>Факультет</td>
+            <td>Направление, специальность</td>
+            <td>Страна проживания</td>
+            <td>Место работы</td>
+            <td>Сфера Деятельности</td>
+            <td>Телефон</td>
+            <td>Email</td>
+            </tr>
+           {% for student in students %}
+            <tr class="h">
+                <td>{{ student.fio }} </td>
+                <td>{{ student.graduate_date }}</td>
+                <td>{{ student.faculty }}</td>
+                <td>{{ student.cafedra }}</td>
+                <td>{{ student.country }}</td>
+                <td>{{ student.job }}</td>
+                <td>{{ student.jcategory }}</td>
+                <td>{{ student.telephone }}</td>
+                <td>{{ student.email }}</td>
+            </tr>
+            {% endfor %}
+    </table>
+    <br>
+    <input type="button" value="Печать" onclick="print()" style="margin-left:20px;">
+{% endblock %}

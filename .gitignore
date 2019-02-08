@@ -1,0 +1,7 @@
+migrations
+.env
+env
+*.pyc
+*.env
+.idea
+*.env.save

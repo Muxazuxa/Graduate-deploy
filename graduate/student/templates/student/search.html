@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Поиск</title>
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'student/style.css' %}">
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <br>
+  <h2 style="text-align:center;">Форма для поиска</h2>
+  <br>
+  <form method="get" id="studentForm" data-cafedra-url="{% url 'student:ajax_load_cafedra' %}" novalidate>
+    <table>
+    {{ filter.form.as_table }}
+      </table>
+    <br>
+    <button type="submit">Поиск</button>
+  </form>
+  <br>
+  <h2 style="text-align:center;">Результат</h2>
+  <br>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $("#id_faculty").change(function () {
+      var url = $("#studentForm").attr("data-cafedra-url");
+      var facultyId = $(this).val();
+
+      $.ajax({
+        url: url,
+        data: {
+          'faculty': facultyId
+        },
+        success: function (data) {
+          $("#id_cafedra").html(data);
+        }
+      });
+
+    });
+  </script>
+  </div>
+<table class="T">
+            <tr>
+            <td>ФИО</td>
+            <td>Дата окончания</td>
+            <td>Факультет</td>
+            <td>Направление, специальность</td>
+            <td>Страна проживания</td>
+            <td>Место работы</td>
+            <td>Сфера Деятельности</td>
+            <td>Телефон</td>
+            <td>Email</td>
+            </tr>
+           {% for student in filter.qs %}
+            <tr class="h">
+                <td>{{ student.fio }} </td>
+                <td>{{ student.graduate_date }}</td>
+                <td>{{ student.faculty }}</td>
+                <td>{{ student.cafedra }}</td>
+                <td>{{ student.country }}</td>
+                <td>{{ student.job }}</td>
+                <td>{{ student.jcategory }}</td>
+                <td>{{ student.telephone }}</td>
+                <td>{{ student.email }}</td>
+            </tr>
+            {% endfor %}
+    </table>
+<br>
+<input type="button" value="Печать" onclick="print()" style="margin-left:20px;">
+<br>
+{% endblock %}
