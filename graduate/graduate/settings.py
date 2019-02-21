@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.9.195']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.11.76', '178.217.169.187', 'graduate.kstu.kg']
 
 
 # Application definition
@@ -106,6 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+SESSION_COOKIE_AGE = 3600
 
 LOGIN_REDIRECT_URL = '/student/add'
 
@@ -130,7 +131,6 @@ USE_TZ = True
 
 _PATH = os.path.abspath(os.path.dirname(__file__))
 
-STATIC_ROOT = os.path.join(_PATH, 'files', 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(_PATH, 'static'),
