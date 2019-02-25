@@ -45,8 +45,8 @@ class Student(models.Model):
     country = models.CharField(max_length=100, blank=False, default='Кыргызстан', verbose_name='Страна проживания')
     job = models.CharField(max_length=100, blank=False, verbose_name='Место работы')
     jcategory = models.ForeignKey(JCategory, on_delete=models.SET_NULL, null=True, verbose_name='Сфера Деятельности')
-    telephone = models.CharField(max_length=20, verbose_name='Телефон')
-    email = models.EmailField()
+    telephone = models.CharField(max_length=20,blank=True, verbose_name='Телефон')
+    email = models.EmailField(blank=True)
     feedback = models.TextField(null=True, blank=True, verbose_name="Отзывы и предложения")
     created = models.DateTimeField(auto_now_add=True)
 

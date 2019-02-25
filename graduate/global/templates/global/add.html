@@ -1,0 +1,40 @@
+{% block head %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <meta name="viewport" content="width = device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+<title>Регистрационная Форма</title>
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <br>
+  <h2 style="text-align:center;">Форма для ввода данных для выпускников КГТУ-ФПИ("Политех")</h2>
+  <br>
+
+  <form method="post" id="studentForm" data-cafedra-url="{% url 'student:ajax_load_cafedra' %}" novalidate>
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <button type="submit">Сохранить</button>
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $("#id_faculty").change(function () {
+      var url = $("#studentForm").attr("data-cafedra-url");
+      var facultyId = $(this).val();
+      $.ajax({
+        url: url,
+        data: {
+          'faculty': facultyId
+        },
+        success: function (data) {
+          $("#id_cafedra").html(data);
+        }
+      });
+    });
+  </script>
+</div>
+{% endblock %}

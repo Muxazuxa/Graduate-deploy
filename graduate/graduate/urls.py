@@ -24,5 +24,6 @@ from .import views
 urlpatterns = [
     url(r'^$', views.login_redirect, name='login_redirect'),
     path('admin/', admin.site.urls),
-    path('student/', include('student.urls', namespace='student'))
+    path('student/', include('student.urls', namespace='student')),
+    path('graduate/', include('global.urls', namespace='global'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

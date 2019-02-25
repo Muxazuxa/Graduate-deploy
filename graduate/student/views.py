@@ -1,7 +1,7 @@
 from django.views.generic import ListView, CreateView, UpdateView
 from django.shortcuts import render
 from .models import Student, Cafedra, Faculty
-from .forms import StudentForm, GradForm
+from .forms import StudentForm
 from .filters import StudentFilter
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
@@ -39,6 +39,3 @@ def search(request):
     student_filter = StudentFilter(request.GET, queryset=student_list)
     return render(request, 'student/search.html', {'filter': student_filter})
 
-
-def greet(request):
-    return render(request, 'student/greet.html')
