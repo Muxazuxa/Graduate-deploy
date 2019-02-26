@@ -17,6 +17,10 @@ def greet(request):
     return render(request, 'global/greet.html')
 
 
+def about(request):
+    return render(request, 'global/about.html')
+
+
 def success(request):
     return render(request, 'global/success.html')
 
