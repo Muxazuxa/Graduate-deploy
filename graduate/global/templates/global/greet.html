@@ -1,14 +1,12 @@
-<! doctype html>
-<html>
-<head>
-	<title>Приветсвенная страница</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	{% load static %}
+{% extends 'base2.html' %}
 
-	<link rel="stylesheet" type="text/css" href="{% static 'global/style.css' %}">
+{% block head %}
 
-</head>
-<body>
+<title>Обращение</title>
+
+{% endblock %}
+
+{% block body %}
 	<header>
 		<h2>Уважаемые выпускники ФПИ-КГТУ им.И.Раззакова!</h2>
 		<br>
@@ -34,7 +32,4 @@
 			<li>Адресс:</li>
 		</ul>
 	</footer>
-</body>
-</html>
-</body>
-</html>
+{% endblock %}

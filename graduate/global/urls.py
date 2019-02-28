@@ -8,6 +8,7 @@ app_name = 'student'
 urlpatterns = [
     path('greet', views.greet, name='greet'),
     path('about', views.about, name='about'),
+    path('gallery', views.gallery, name='gallery'),
     path('success', views.success, name='success'),
     path('ajax/load-cafedra/', views.load_cafedra, name='ajax_load_cafedra'),
     path('add', views.GradCreateView.as_view(), name='add'),

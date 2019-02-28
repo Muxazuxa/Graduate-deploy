@@ -21,6 +21,10 @@ def about(request):
     return render(request, 'global/about.html')
 
 
+def gallery(request):
+    return render(request, 'global/gallery.html')
+
+
 def success(request):
     return render(request, 'global/success.html')
 

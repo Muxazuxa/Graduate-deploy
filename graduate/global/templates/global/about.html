@@ -1,14 +1,10 @@
-<! doctype html>
-<html>
-<head>
+{% extends 'base2.html' %}
+
+{% block head %}
 	<title>О Ассоциации</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	{% load static %}
+{% endblock %}
 
-	<link rel="stylesheet" type="text/css" href="{% static 'global/style.css' %}">
-
-</head>
-<body>
+{% block body %}
 	<header>
 		<h2>Ассоциация выпускников</h2>
 		<br>
@@ -73,7 +69,4 @@
     </p>
 		</div>
 	</header>
-</body>
-</html>
-</body>
-</html>
+{% endblock %}
