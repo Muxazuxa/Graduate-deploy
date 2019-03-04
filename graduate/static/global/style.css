@@ -1,9 +1,5 @@
-    nav{
+    .navbar-expand-lg{
         background-color:#0360a5;
-    }
-
-    .logo{
-    background-image:url("images/logo1.png");
     }
 
     header{
@@ -13,21 +9,20 @@
     header h2{
         font-family: 'Times New Roman', Times, serif;
         text-align: center;
-        color:#3a6ab7;
+        color:#0360a5;
     }
 
     .doc{
-        text-indent: 30px;
         font-size: 20px;
         font-family: 'Times New Roman', Times, serif;
-        border:0px solid #3a6ab7;
+        border:0px solid #0360a5;
         padding:2%;
         margin-bottom: 3%;
         box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
     main h3{
         text-align:center;
-        color:#3a6ab7;
+        color:#0360a5;
     }
     main {
         margin:0% 10% 0% 10%;
@@ -38,9 +33,5 @@
     footer{
         margin:0% 10% 0% 10%;
         background-color: #eff0f1;
-        font-size:16px;
-    }
-r
-    .pic{
-        background-image:url("images/logo1.png")
+        font-size:14px;
     }

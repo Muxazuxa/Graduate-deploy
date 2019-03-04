@@ -10,6 +10,10 @@
     border-top:2px solid;
    }
 
+   .T td{
+      font-size:14px;
+   }
+
    .h td{
       color:#447e9b;
       font-size:14px;

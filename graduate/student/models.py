@@ -57,3 +57,12 @@ class Student(models.Model):
         verbose_name='Выпускники'
         verbose_name_plural='Выпускники'
 
+
+class Photo(models.Model):
+    photo = models.ImageField(upload_to='images')
+
+    class Meta:
+        verbose_name='Фото'
+        verbose_name_plural='Фото'
+
+

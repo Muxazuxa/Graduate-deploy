@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.11.76', '178.217.169.187', '
 INSTALLED_APPS = [
     'student',
     'global',
+    'dbbackup',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -89,6 +90,9 @@ DATABASES = {
 }
 
 
+DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
+DBBACKUP_STORAGE_OPTIONS = {'location': os.path.join(BASE_DIR, 'backups')}
+
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -135,3 +139,7 @@ _PATH = os.path.abspath(os.path.dirname(__file__))
 STATIC_URL = '/static/'
 
 STATIC_ROOT = (os.path.join(BASE_DIR, "static"))
+
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'

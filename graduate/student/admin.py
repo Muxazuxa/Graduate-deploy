@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Cafedra, Faculty, Student, JCategory
+from .models import Cafedra, Faculty, Student, JCategory, Photo
 
 # Register your models here.
 
@@ -18,3 +18,4 @@ admin.site.register(Student, AdminProfile)
 admin.site.register(Cafedra)
 admin.site.register(Faculty)
 admin.site.register(JCategory)
+admin.site.register(Photo)
