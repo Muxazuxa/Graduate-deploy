@@ -39,7 +39,7 @@ class JCategory(models.Model):
 
 class Student(models.Model):
     fio = models.CharField(max_length=100, blank=False, verbose_name='Ф.И.О.')
-    graduate_date = models.DateField(blank=False, verbose_name='Дата окончания')
+    graduate_date = models.CharField(blank=False, max_length=4, verbose_name='Год окончания')
     faculty = models.ForeignKey(Faculty, on_delete=models.SET_NULL, null=True, verbose_name='Факультет')
     cafedra = models.ForeignKey(Cafedra, on_delete=models.SET_NULL, null=True, verbose_name='Кафедра')
     country = models.CharField(max_length=100, blank=False, default='Кыргызстан', verbose_name='Страна проживания')
@@ -54,6 +54,7 @@ class Student(models.Model):
         return self.fio
 
     class Meta:
+        ordering = ('-created',)
         verbose_name='Выпускники'
         verbose_name_plural='Выпускники'
 

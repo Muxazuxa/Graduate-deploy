@@ -8,4 +8,4 @@ class StudentFilter (django_filters.FilterSet):
 
     class Meta:
         model = Student
-        fields = ('fio', 'faculty', 'cafedra', 'jcategory')
+        fields = ('fio', 'faculty', 'cafedra', 'jcategory', 'graduate_date')

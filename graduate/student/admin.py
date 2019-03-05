@@ -5,7 +5,8 @@ from .models import Cafedra, Faculty, Student, JCategory, Photo
 
 
 class AdminProfile(admin.ModelAdmin):
-    list_display = ('fio', 'faculty', 'cafedra', 'graduate_date', 'telephone', 'email')
+    list_display = ['fio', 'faculty', 'cafedra', 'graduate_date', 'telephone', 'email']
+    list_filter = ['fio', 'faculty', 'cafedra', 'graduate_date']
     search_fields = ('fio',)
 
     def get_queryset(self, request):

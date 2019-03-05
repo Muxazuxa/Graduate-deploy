@@ -1,8 +1,8 @@
 from django import forms
-from .models import Student, Cafedra
+from student.models import Student, Cafedra
 
 
-class StudentForm(forms.ModelForm):
+class GradForm(forms.ModelForm):
 
     class Meta:
         model = Student
@@ -15,7 +15,8 @@ class StudentForm(forms.ModelForm):
             'job',
             'jcategory',
             'telephone',
-            'email',)
+            'email',
+            'feedback')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

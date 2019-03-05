@@ -35,3 +35,16 @@
         background-color: #eff0f1;
         font-size:14px;
     }
+
+    .gallery{
+    margin:2% 0% 2% 5%;
+    }
+
+    .photo_item{
+        margin-top:2%;
+    }
+
+    .photo_item img{
+        width: 140px;
+        height: 160px;
+    }

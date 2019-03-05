@@ -1,13 +1,13 @@
 from django.views.generic import ListView, CreateView, UpdateView
 from django.shortcuts import render
 from student.models import Student, Cafedra, Faculty
-from student.forms import StudentForm
+from .forms import GradForm
 
 
 class GradCreateView(CreateView):
     template_name = 'global/add.html'
     model = Student
-    form_class = StudentForm
+    form_class = GradForm
 
     def get_success_url(self):
         return "success"
